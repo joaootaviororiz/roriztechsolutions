@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RorizTechSolutions | Soluções em Tecnologia</title>
+  <meta name="description" content="Análise de dados, automação com IA, desenvolvimento de sistemas e suporte técnico profissional." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #05070d;
+      --card: #0b0f1a;
+      --primary: #00d4ff;
+      --secondary: #7c3aed;
+      --text: #e6edf3;
+      --muted: #9aa4b2;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #0a0f1f, #02040a 70%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      background: rgba(5,7,13,0.6);
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.3rem;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: .25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 10px 30px rgba(0,212,255,.25);
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .services {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background: linear-gradient(180deg, #0b0f1a, #060912);
+      border: 1px solid rgba(255,255,255,0.05);
+      padding: 24px;
+      border-radius: 18px;
+      transition: .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0,212,255,.4);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .about {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+      padding: 40px 0;
+      color: var(--muted);
+    }
+
+    .contact-links a {
+      display: inline-block;
+      margin: 8px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #25d366;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 10px 25px rgba(0,0,0,.4);
+      z-index: 999;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding-top: 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">RorizTechSolutions</div>
+  </div>
+</header>
+
+<section class="hero container">
+  <h1>Soluções Inteligentes em Tecnologia e Automação</h1>
+  <p>
+    Ajudo pessoas e empresas a otimizar processos com análise de dados, automação com IA
+    em Python, desenvolvimento de sistemas e suporte técnico especializado.
+  </p>
+  <a class="btn btn-primary" href="https://wa.me/5564999883459" target="_blank">Falar no WhatsApp</a>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Serviços</h2>
+    <div class="grid services">
+
+      <div class="card">
+        <h3>Análise de Dados</h3>
+        <p>Transformação de dados em insights estratégicos para tomada de decisão.</p>
+      </div>
+
+      <div class="card">
+        <h3>Desenvolvimento de Sistemas</h3>
+        <p>Criação de sistemas web personalizados e soluções sob medida.</p>
+      </div>
+
+      <div class="card">
+        <h3>Automação com IA em Python</h3>
+        <p>Automatize tarefas e processos utilizando inteligência artificial.</p>
+      </div>
+
+      <div class="card">
+        <h3>Suporte Empresarial</h3>
+        <p>Diagnóstico e resolução rápida de problemas técnicos em empresas.</p>
+      </div>
+
+      <div class="card">
+        <h3>Criação de Sites</h3>
+        <p>Landing pages e sites profissionais para fortalecer sua presença digital.</p>
+      </div>
+
+      <div class="card">
+        <h3>Artes para Redes Sociais</h3>
+        <p>Design de banners e artes visuais para aumentar seu engajamento online.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Sobre</h2>
+    <p class="about">
+      Sou João Otávio Mota Roriz, especialista em tecnologia e soluções digitais.
+      Trabalho ajudando profissionais e empresas a ganhar eficiência com automação,
+      dados e sistemas inteligentes.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Contato</h2>
+    <div class="contact-links" style="text-align:center">
+      <a href="https://wa.me/5564999883459" target="_blank">WhatsApp</a>
+      <a href="https://instagram.com/joaootaviororiz" target="_blank">Instagram</a>
+      <a href="mailto:joaootaviororiz@gmail.com">Email</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 RorizTechSolutions — Todos os direitos reservados.
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/5564999883459" target="_blank">WhatsApp</a>
+
+</body>
+</html>
