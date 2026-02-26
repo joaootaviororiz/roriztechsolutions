@@ -24,6 +24,8 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: 'Inter', sans-serif;
       background: radial-gradient(circle at top, #0a0f1f, #02040a 70%);
@@ -42,8 +44,8 @@
       backdrop-filter: blur(6px);
       position: sticky;
       top: 0;
-      background: rgba(5,7,13,0.75);
-      z-index: 10;
+      background: rgba(5,7,13,0.9);
+      z-index: 1000;
     }
 
     .nav {
@@ -60,19 +62,48 @@
       color: transparent;
     }
 
+    /* ===== MENU ===== */
+
+    .menu {
+      display: flex;
+      align-items: center;
+    }
+
     .menu a {
       color: var(--muted);
       text-decoration: none;
-      margin-left: 18px;
+      margin-left: 20px;
       font-weight: 500;
       transition: .2s;
     }
 
     .menu a:hover { color: var(--primary); }
 
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger span {
+      width: 26px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 4px;
+    }
+
+    /* ===== HERO ===== */
+
     .hero {
       padding: 90px 0 60px;
       text-align: center;
+      animation: fadeUp .8s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .hero h1 {
@@ -128,9 +159,16 @@
       border: 1px solid rgba(255,255,255,0.05);
       padding: 26px;
       border-radius: 18px;
-      transition: .25s ease;
+      transition: .35s ease;
       position: relative;
       overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .card::after {
@@ -195,8 +233,32 @@
       z-index: 999;
     }
 
-    @media (max-width: 700px) {
-      .menu { display: none; }
+    /* ===== MOBILE ===== */
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+
+      .menu {
+        position: absolute;
+        top: 70px;
+        right: 4%;
+        background: #0b0f1a;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 12px;
+        flex-direction: column;
+        padding: 16px;
+        gap: 10px;
+        display: none;
+      }
+
+      .menu.active { display: flex; }
+
+      .menu a { margin: 0; }
+
+      /* slide feeling on mobile */
+      .categories {
+        grid-template-columns: 100%;
+      }
     }
   </style>
 </head>
@@ -205,11 +267,18 @@
 <header>
   <div class="container nav">
     <div class="logo">RorizTechSolutions</div>
-    <nav class="menu">
+
+    <nav class="menu" id="menu">
       <a href="#servicos">Serviços</a>
       <a href="#sobre">Sobre</a>
       <a href="#contato">Contato</a>
     </nav>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
 </header>
 
@@ -305,6 +374,29 @@
 </footer>
 
 <a class="whatsapp-float" href="https://wa.me/5564999883459" target="_blank">WhatsApp</a>
+
+<script>
+  // ===== mobile menu =====
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
+
+  hamburger.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+
+  // ===== scroll reveal (slide effect) =====
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.card').forEach(card => {
+    observer.observe(card);
+  });
+</script>
 
 </body>
 </html>
