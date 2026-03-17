@@ -375,6 +375,69 @@
       letter-spacing: 1px;
     }
 
+    /* ===== RESUME / TIMELINE ===== */
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 40px auto 0;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -36px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 15px var(--primary);
+    }
+
+    .timeline-date {
+      font-size: 0.85rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .timeline-title {
+      font-size: 1.25rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .timeline-company {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .timeline-desc {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
     /* ===== FOOTER ===== */
 
     footer {
@@ -485,6 +548,7 @@
     <nav class="menu" id="menu">
       <a href="#servicos">Serviços</a>
       <a href="#sobre">Sobre</a>
+      <a href="#curriculo">Currículo</a>
       <a href="#contato">Contato</a>
     </nav>
 
@@ -506,7 +570,9 @@
       <a class="btn btn-primary" href="https://wa.me/5564999883459" target="_blank">
         <i class='bx bxl-whatsapp' style="margin-right: 8px; font-size: 1.2rem;"></i> Falar no WhatsApp
       </a>
-      <a class="btn btn-outline" href="#servicos">Ver Serviços</a>
+      <a class="btn btn-outline" href="#curriculo">
+        <i class='bx bx-file' style="margin-right: 8px; font-size: 1.2rem;"></i> Ver Currículo
+      </a>
     </div>
   </div>
 </section>
@@ -594,28 +660,75 @@
       <div class="about-info" data-aos="fade-right">
         <h2 class="section-title" style="text-align: left;">Inovação Constante</h2>
         <div class="about-text">
-          <p>Sou <strong>João Otávio Mota Roriz</strong>, apaixonado por tecnologia e focado em entregar resultados reais. Minha missão é simplificar a complexidade tecnológica para que você possa focar no que realmente importa: o crescimento do seu negócio.</p>
-          <p style="margin-top: 20px;">Utilizo as ferramentas mais modernas do mercado para criar soluções que unem design, performance e inteligência.</p>
+          <p>Sou <strong>João Otávio Mota Roriz</strong>, engenheiro de software e especialista em tecnologia. Minha trajetória é marcada pela dedicação em transformar dados em inteligência e processos manuais em automações eficientes.</p>
+          <p style="margin-top: 20px;">Com sólida experiência em BI, suporte técnico e desenvolvimento, busco sempre o próximo nível de excelência profissional, garantindo que cada solução entregue traga resultados prósperos e reconhecimento para quem as utiliza.</p>
         </div>
       </div>
       <div class="about-stats" data-aos="fade-left">
         <div class="stat-item">
-          <span class="stat-number">5+</span>
+          <span class="stat-number">9+</span>
           <span class="stat-label">Anos de XP</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number">50+</span>
-          <span class="stat-label">Projetos</span>
+          <span class="stat-number">Engenheiro</span>
+          <span class="stat-label">Software</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number">100%</span>
-          <span class="stat-label">Satisfação</span>
+          <span class="stat-number">Python/SQL</span>
+          <span class="stat-label">Especialista</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number">24/7</span>
-          <span class="stat-label">Monitoramento</span>
+          <span class="stat-number">BI/IA</span>
+          <span class="stat-label">Foco</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="curriculo">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title">Minha Trajetória</h2>
+      <p class="section-subtitle">Experiência profissional consolidada em análise de dados, suporte e automação.</p>
+    </div>
+
+    <div class="timeline" data-aos="fade-up">
+      <!-- Item 1: Mixbrasilis -->
+      <div class="timeline-item">
+        <span class="timeline-date">11/2025 — Presente</span>
+        <h3 class="timeline-title">Analista de Dados</h3>
+        <span class="timeline-company">Mixbrasilis (Prestação de Serviços)</span>
+        <p class="timeline-desc">
+          Desenvolvimento de KPIs estratégicos e dashboards no Google Looker Studio. Construção de pipelines de ETL em Python e otimização de consultas SQL (Firebird) para suporte à tomada de decisão gerencial.
+        </p>
+      </div>
+
+      <!-- Item 2: Real Jurídica -->
+      <div class="timeline-item">
+        <span class="timeline-date">09/2015 — 07/2025</span>
+        <h3 class="timeline-title">Analista de Suporte / BI</h3>
+        <span class="timeline-company">Real Jurídica</span>
+        <p class="timeline-desc">
+          Gestão de infraestrutura de servidores, automação de processos internos com scripts Shell e Python, manutenção de bancos de dados e criação de relatórios estratégicos para recuperação de crédito.
+        </p>
+      </div>
+
+      <!-- Item 3: Formação -->
+      <div class="timeline-item">
+        <span class="timeline-date">Concluído em 2020</span>
+        <h3 class="timeline-title">Engenharia de Software</h3>
+        <span class="timeline-company">UniRv - Universidade de Rio Verde</span>
+        <p class="timeline-desc">
+          Graduação completa, consolidando conhecimentos em arquitetura de sistemas, desenvolvimento e gestão de projetos tecnológicos.
+        </p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px;" data-aos="zoom-in">
+      <a href="mailto:joao.otvo.rv@hotmail.com" class="btn btn-outline">
+        <i class='bx bx-envelope' style="margin-right: 8px;"></i> Solicitar Currículo Completo
+      </a>
     </div>
   </div>
 </section>
@@ -629,8 +742,8 @@
       <div class="contact-links" style="justify-content: center; margin-top: 40px;">
         <a href="https://wa.me/5564999883459" target="_blank" title="WhatsApp"><i class='bx bxl-whatsapp'></i></a>
         <a href="https://instagram.com/joaootaviororiz" target="_blank" title="Instagram"><i class='bx bxl-instagram'></i></a>
-        <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
-        <a href="mailto:joaootaviororiz@gmail.com" title="Email"><i class='bx bx-envelope'></i></a>
+        <a href="https://linkedin.com/in/joaootaviororiz" target="_blank" title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+        <a href="mailto:joao.otvo.rv@hotmail.com" title="Email"><i class='bx bx-envelope'></i></a>
       </div>
     </div>
   </div>
