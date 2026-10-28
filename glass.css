@@ -1,0 +1,139 @@
+/* Glass surfaces share tokens so both themes keep the same visual hierarchy. */
+:root {
+  color-scheme: light;
+  --paper: #eef3f5;
+  --ink: #1d3436;
+  --muted: #50686a;
+  --line: rgba(53, 86, 90, .17);
+  --green: #244e3b;
+  --glass: rgba(255, 255, 255, .57);
+  --glass-strong: rgba(247, 252, 253, .87);
+  --glass-edge: rgba(255, 255, 255, .9);
+  --glass-shadow: 0 16px 50px rgba(44, 74, 80, .08), inset 0 1px 0 var(--glass-edge);
+  --accent: #536f55;
+  --art: rgba(207, 226, 215, .45);
+  --action-bg: #234841;
+  --action-text: #f5faf5;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #101b22;
+  --ink: #edf4f1;
+  --muted: #afc4c2;
+  --line: rgba(197, 225, 220, .18);
+  --glass: rgba(31, 49, 57, .64);
+  --glass-strong: rgba(24, 41, 48, .91);
+  --glass-edge: rgba(229, 255, 249, .17);
+  --glass-shadow: 0 18px 55px rgba(0, 0, 0, .16), inset 0 1px 0 var(--glass-edge);
+  --accent: #b6d99d;
+  --art: rgba(46, 76, 68, .48);
+  --action-bg: #d5edb4;
+  --action-text: #1b332c;
+}
+body {
+  background: var(--paper);
+  background-image: radial-gradient(ellipse at 4% 8%, rgba(135, 196, 173, .23), transparent 36%), radial-gradient(ellipse at 96% 22%, rgba(137, 177, 213, .23), transparent 34%), radial-gradient(ellipse at 45% 78%, rgba(180, 205, 150, .13), transparent 40%);
+}
+header {
+  top: 14px;
+  width: min(1240px, calc(100% - 32px));
+  margin: 14px auto 0;
+  border: 1px solid var(--glass-edge);
+  border-radius: 25px;
+  background: var(--glass-strong);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  backdrop-filter: blur(28px) saturate(160%);
+  box-shadow: var(--glass-shadow);
+}
+.nav { width: calc(100% - 44px); height: 76px; gap: 22px; }
+.brand { white-space: nowrap; }
+.brand span, .brand small { color: var(--accent); }
+.menu { gap: 20px; margin-left: auto; }
+.menu a:hover, .text-link:hover { color: var(--accent); }
+.nav-tools { display: flex; align-items: center; gap: 9px; order: 3; }
+.theme-toggle, .menu-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 9px 14px;
+  background: var(--glass);
+  color: var(--ink);
+  border: 1px solid var(--glass-edge);
+  border-radius: 100px;
+  box-shadow: inset 0 1px 0 var(--glass-edge), 0 3px 12px rgba(29, 58, 62, .05);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+}
+.menu-button { display: none; }
+.theme-toggle:hover { background: var(--art); }
+.theme-icon { flex-shrink: 0; }
+.nav-contact, .btn-light, .tag { background: var(--glass); border-color: var(--line); }
+.btn-light, .nav-contact { box-shadow: inset 0 1px 0 var(--glass-edge); }
+.btn-dark { background: var(--action-bg); color: var(--action-text); }
+h1 em { color: var(--accent); }
+.hero-art, .project, .about, .service {
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  backdrop-filter: blur(22px) saturate(140%);
+  box-shadow: var(--glass-shadow);
+}
+.hero-art { background: var(--art); border-radius: 32px; }
+.art-label { color: var(--ink); background: var(--glass-strong); border-color: var(--glass-edge); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); box-shadow: var(--glass-shadow); }
+.art-label b, .art-caption, .principles span { color: var(--accent); }
+.orbit { border-color: var(--line); }
+.orbit::before { background: var(--accent); border-color: var(--paper); }
+.project { border-radius: 28px; }
+.mesa-visual { background: linear-gradient(130deg, #315d4e, #163c35); }
+.voice-visual, .remote-visual { background: var(--art); border-bottom: 1px solid var(--line); }
+.wave span { background: var(--accent); }
+.server-unit { background: var(--glass); border-color: var(--line); box-shadow: inset 0 1px 0 var(--glass-edge); }
+.server-unit::before { background: var(--accent); }
+.server-unit::after { background: var(--muted); opacity: .45; }
+.about { border-left: 0; border-right: 0; }
+.about-copy p { color: var(--muted); }
+.principles { border-color: var(--line); }
+.role { color: var(--accent); }
+.current { background: var(--art); color: var(--accent); }
+.current .dot { background: var(--accent); }
+.service-grid { gap: 20px; }
+.service { padding: 26px; border-radius: 24px; }
+.service-num { color: var(--accent); }
+.contact-box { background: linear-gradient(125deg, rgba(28, 60, 53, .96), rgba(25, 46, 53, .96)); color: #f2f6ef; border: 1px solid rgba(240, 255, 250, .25); border-radius: 30px; box-shadow: 0 22px 60px rgba(14, 41, 39, .15), inset 0 1px 0 rgba(255, 255, 255, .16); }
+.contact-box .eyebrow { color: var(--lime); }
+.contact-bottom p, .contact-email { color: #d0dcd4; }
+.btn-lime { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .65), 0 6px 20px rgba(0, 0, 0, .1); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  header, .menu, .art-label { background: var(--paper); }
+  .project, .about, .service { background: var(--glass-strong); }
+}
+@media (max-width: 1100px) and (min-width: 761px) {
+  .menu { gap: 12px; font-size: 11px; }
+  .nav { gap: 12px; }
+  .nav-contact { padding: 9px 12px; }
+  .theme-label { display: none; }
+  .theme-toggle { padding: 10px; }
+  .brand { font-size: 21px; }
+}
+@media (max-width: 760px) {
+  header { top: 9px; margin-top: 9px; width: calc(100% - 20px); border-radius: 22px; }
+  .nav { width: calc(100% - 28px); height: 67px; gap: 10px; }
+  .nav-tools { margin-left: auto; gap: 6px; }
+  .menu-button { display: inline-flex; padding: 8px 13px; }
+  .theme-toggle { padding: 10px; }
+  .theme-label { display: none; }
+  .menu { top: 77px; left: -1px; right: -1px; margin: 0; border: 1px solid var(--glass-edge); border-radius: 22px; background: var(--glass-strong); -webkit-backdrop-filter: blur(28px); backdrop-filter: blur(28px); box-shadow: var(--glass-shadow); }
+  .hero { padding-top: 38px; }
+  .hero-art { border-radius: 26px; }
+  .service-grid { gap: 15px; }
+  .service { padding: 24px; }
+  .contact-box { border-radius: 26px; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  :root { --glass: #f5f8f7; --glass-strong: #f5f8f7; }
+  :root[data-theme="dark"] { --glass: #1d3037; --glass-strong: #1d3037; }
+}
+.btn-lime, .skip { color: #1b332c; }
