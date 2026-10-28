@@ -11,6 +11,7 @@ O site reúne experiências em suporte técnico, análise de dados, automação 
 - **MesaFlow:** sistema de gestão de consumo e fechamentos, desenvolvido a partir das necessidades do restaurante da minha família.
 - **Automação com Alexa:** projeto de integração entre comandos de voz e um sistema em Python para registros de vendas e consumos.
 - **Servidor de acesso remoto:** experiência de implantação de um servidor RustDesk em uma máquina virtual Linux com Ubuntu, pensado para operação contínua 24/7.
+- **[Portfólio de automação com Python](https://github.com/joaootaviororiz/automation-portfolio):** pipeline de ETL que extrai dados do Firebird, transforma com Pandas e integra ao Google Sheets para análise e visualização. Também está vinculado à experiência na Mixbrasilis.
 
 As tecnologias citadas nos projetos descrevem esses trabalhos. O portfólio em si é um site estático em HTML, CSS e JavaScript.
 
