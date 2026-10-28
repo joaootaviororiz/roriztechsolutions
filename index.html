@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RorizTechSolutions | Soluções em Tecnologia</title>
-  <meta name="description" content="Análise de dados, automação com IA, desenvolvimento de sistemas e suporte técnico profissional." />
+  <meta name="description"
+    content="Análise de dados, automação com IA, desenvolvimento de sistemas e suporte técnico profissional." />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/825/825660.png" />
@@ -32,9 +34,16 @@
       --border: rgba(255, 255, 255, 0.08);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    html { scroll-behavior: smooth; overflow-x: hidden; }
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -114,8 +123,13 @@
       transition: 0.3s;
     }
 
-    .menu a:hover { color: var(--text); }
-    .menu a:hover::after { width: 100%; }
+    .menu a:hover {
+      color: var(--text);
+    }
+
+    .menu a:hover::after {
+      width: 100%;
+    }
 
     .hamburger {
       display: none;
@@ -218,7 +232,9 @@
       transform: translateY(-5px);
     }
 
-    section { padding: 100px 0; }
+    section {
+      padding: 100px 0;
+    }
 
     .section-header {
       text-align: center;
@@ -297,7 +313,9 @@
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
 
-    .card:hover::before { opacity: 1; }
+    .card:hover::before {
+      opacity: 1;
+    }
 
     .card-icon {
       font-size: 2.5rem;
@@ -514,11 +532,16 @@
     /* ===== MOBILE ===== */
 
     @media (max-width: 992px) {
-      .about-content { grid-template-columns: 100%; gap: 40px; }
+      .about-content {
+        grid-template-columns: 100%;
+        gap: 40px;
+      }
     }
 
     @media (max-width: 768px) {
-      .hamburger { display: flex; }
+      .hamburger {
+        display: flex;
+      }
 
       .menu {
         position: fixed;
@@ -533,407 +556,349 @@
         gap: 30px;
         transition: 0.4s;
         z-index: 2000;
-        box-shadow: -10px 0 50px rgba(0,0,0,0.5);
+        box-shadow: -10px 0 50px rgba(0, 0, 0, 0.5);
       }
 
-      .menu.active { right: 0; }
+      .menu.active {
+        right: 0;
+      }
 
-      .menu a { margin: 0; font-size: 1.5rem; }
+      .menu a {
+        margin: 0;
+        font-size: 1.5rem;
+      }
 
-      .hero h1 { font-size: 3rem; }
+      .hero h1 {
+        font-size: 3rem;
+      }
 
-      .about-stats { gap: 12px; }
-      .stat-item { padding: 16px 10px; }
+      .about-stats {
+        gap: 12px;
+      }
 
-      .footer-content { flex-direction: column; text-align: center; }
-    }
-    section[id] { scroll-margin-top: 100px; }
-    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
-    .project-card { gap: 16px; }
-    .project-card p { color: var(--muted); }
-    .project-card .card-icon, .project-card h3 { margin-bottom: 0; }
-    .project-card .project-lead { color: var(--text); font-size: 1.15rem; }
-    .project-card h4 { margin-top: 8px; }
-    .project-status { color: var(--primary); font-size: .8rem; }
-    .project-card ul li { align-items: baseline; }
-    .project-note { font-size: .85rem; }
-    .project-cta { margin-top: auto; }
-    .hamburger { background: transparent; border: 0; padding: 10px; position: relative; z-index: 2001; }
-    a:focus-visible, button:focus-visible { outline: 2px solid var(--primary); outline-offset: 5px; }
-    @media (max-width: 992px) { .menu a { margin-left: 18px; } .logo { font-size: 1.2rem; } }
-    @media (max-width: 768px) {
-      .project-grid { grid-template-columns: minmax(0, 1fr); }
-      .menu a { margin: 0; font-size: 1.2rem; }
-      .menu { visibility: hidden; }
-      .menu.active { visibility: visible; overflow-y: auto; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition: none !important; animation: none !important; }
-      [data-aos] { opacity: 1 !important; transform: none !important; }
+      .stat-item {
+        padding: 16px 10px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<header id="header">
-  <div class="container nav">
-    <div class="logo">RorizTech<span>Solutions</span></div>
-
-    <nav class="menu" id="menu">
-      <a href="#servicos">Serviços</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#curriculo">Trajetória</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
-    </nav>
-
-    <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</header>
-
-<section class="hero container">
-  <div data-aos="fade-up" data-aos-duration="1000">
-    <h1>Soluções Inteligentes em <span>Tecnologia e Automação</span></h1>
-    <p>
-      Sou João Otávio Mota Roriz, analista de dados na Softplan e desenvolvedor de projetos próprios. Transformo necessidades do dia a dia em análises, automações em Python e sistemas sob medida.
-    </p>
-    <div class="hero-btns">
-      <a class="btn btn-primary" href="https://wa.me/5564999883459" target="_blank">
-        <i class='bx bxl-whatsapp' style="margin-right: 8px; font-size: 1.2rem;"></i> Falar no WhatsApp
-      </a>
-      <a class="btn btn-outline" href="#curriculo">
-        <i class='bx bx-file' style="margin-right: 8px; font-size: 1.2rem;"></i> Ver Currículo
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="servicos">
-  <div class="container">
-    <div class="section-header" data-aos="fade-up">
-      <h2 class="section-title">Nossas Especialidades</h2>
-      <p class="section-subtitle">Soluções completas para levar sua empresa ao próximo nível digital.</p>
-    </div>
-
-    <!-- Swiper Slider -->
-    <div class="swiper mySwiper" data-aos="fade-up" data-aos-delay="200">
-      <div class="swiper-wrapper">
-
-        <div class="swiper-slide">
-          <div class="card">
-            <div class="card-icon"><i class='bx bx-bar-chart-alt-2'></i></div>
-            <h3>Dados & Inteligência</h3>
-            <ul>
-              <li>Análise avançada de dados</li>
-              <li>Dashboards estratégicos</li>
-              <li>Modelagem preditiva</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="card">
-            <div class="card-icon"><i class='bx bx-bot'></i></div>
-            <h3>Automação & IA</h3>
-            <ul>
-              <li>Agentes de IA em Python</li>
-              <li>Automação de fluxos</li>
-              <li>Integração de APIs</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="card">
-            <div class="card-icon"><i class='bx bx-code-alt'></i></div>
-            <h3>Desenvolvimento</h3>
-            <ul>
-              <li>Sistemas personalizados</li>
-              <li>Landing Pages de alta conversão</li>
-              <li>Aplicações escaláveis</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="card">
-            <div class="card-icon"><i class='bx bx-support'></i></div>
-            <h3>Suporte Técnico</h3>
-            <ul>
-              <li>Gestão de TI empresarial</li>
-              <li>Suporte remoto ágil</li>
-              <li>Segurança da informação</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="card">
-            <div class="card-icon"><i class='bx bx-palette'></i></div>
-            <h3>Design Digital</h3>
-            <ul>
-              <li>Identidade visual moderna</li>
-              <li>UX/UI Design</li>
-              <li>Social Media Design</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
-</section>
-
-<section id="sobre">
-  <div class="container">
-    <div class="about-content">
-      <div class="about-info" data-aos="fade-right">
-        <h2 class="section-title" style="text-align: left;">Inovação Constante</h2>
-        <div class="about-text">
-          <p>Sou <strong>João Otávio Mota Roriz</strong>, engenheiro de software e especialista em tecnologia. Desde maio de 2026, atuo como Analista de Dados I na Softplan, no contexto do produto 1Doc. Minha trajetória conecta suporte técnico, dados e desenvolvimento de sistemas.</p>
-          <p style="margin-top: 20px;">Com sólida experiência em BI, suporte técnico e desenvolvimento, busco sempre o próximo nível de excelência profissional, desenvolvendo projetos próprios como a MesaFlow e um sistema com integração com Alexa.</p>
-        </div>
-      </div>
-      <div class="about-stats" data-aos="fade-left">
-        <div class="stat-item">
-          <span class="stat-number">9+</span>
-          <span class="stat-label">Anos de XP</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">Engenheiro</span>
-          <span class="stat-label">Software</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">Python/SQL</span>
-          <span class="stat-label">Especialista</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">BI/IA</span>
-          <span class="stat-label">Foco</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="curriculo">
-  <div class="container">
-    <div class="section-header" data-aos="fade-up">
-      <h2 class="section-title">Minha Trajetória</h2>
-      <p class="section-subtitle">Experiência profissional consolidada em análise de dados, suporte e automação.</p>
-    </div>
-
-    <div class="timeline" data-aos="fade-up">
-      <div class="timeline-item">
-        <span class="timeline-date">05/2026 — Presente</span>
-        <h3 class="timeline-title">Analista de Dados I</h3>
-        <span class="timeline-company">Softplan · 1Doc</span>
-        <p class="timeline-desc">Atuação em análise de dados no contexto do produto 1Doc, integrando a equipe da Softplan desde 18 de maio de 2026. Uma etapa da minha trajetória dedicada ao trabalho com dados e à evolução profissional em tecnologia.</p>
-      </div>
-      <!-- Experiência em dados -->
-      <div class="timeline-item">
-        <span class="timeline-date">Experiência em análise de dados</span>
-        <h3 class="timeline-title">Analista de Dados</h3>
-        <span class="timeline-company">Mixbrasilis (Prestação de Serviços)</span>
-        <p class="timeline-desc">
-          Desenvolvimento de KPIs estratégicos e dashboards no Google Looker Studio. Construção de pipelines de ETL em Python e consultas SQL (Firebird) para suporte à tomada de decisão gerencial. Análises operacionais e comerciais, relatórios financeiros e suporte a marketplaces.
-        </p>
-      </div>
-
-      <!-- Item 2: Real Jurídica -->
-      <div class="timeline-item">
-        <span class="timeline-date">09/2015 — 07/2025</span>
-        <h3 class="timeline-title">Analista de Suporte / BI</h3>
-        <span class="timeline-company">Real Jurídica</span>
-        <p class="timeline-desc">
-          Gestão de infraestrutura de servidores, automação de processos internos com scripts Shell e Python, manutenção de bancos de dados e criação de relatórios estratégicos para recuperação de crédito.
-        </p>
-      </div>
-
-      <!-- Item 3: Formação -->
-      <div class="timeline-item">
-        <span class="timeline-date">Concluído em 2020</span>
-        <h3 class="timeline-title">Engenharia de Software</h3>
-        <span class="timeline-company">UniRv - Universidade de Rio Verde</span>
-        <p class="timeline-desc">
-          Graduação completa, consolidando conhecimentos em arquitetura de sistemas, desenvolvimento e gestão de projetos tecnológicos.
-        </p>
-      </div>
-    </div>
-
-    <div style="text-align: center; margin-top: 50px;" data-aos="zoom-in">
-      <a href="mailto:joao.otvo.rv@hotmail.com" class="btn btn-outline">
-        <i class='bx bx-envelope' style="margin-right: 8px;"></i> Solicitar Currículo Completo
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="projetos" aria-labelledby="projetos-title">
-  <div class="container">
-    <div class="section-header" data-aos="fade-up">
-      <h2 class="section-title" id="projetos-title">Projetos próprios</h2>
-      <p class="section-subtitle">Desenvolvimento aplicado a problemas reais de pequenos negócios, restaurantes e suas rotinas.</p>
-    </div>
-    <div class="project-grid">
-      <article class="card project-card" data-aos="fade-up">
-        <span class="project-status">Em desenvolvimento · Sistema para restaurantes</span>
-        <div class="card-icon" aria-hidden="true"><i class="bx bx-restaurant"></i></div>
-        <h3>MesaFlow</h3>
-        <p class="project-lead">Da refeição ao financeiro.</p>
-        <p>Sistema que desenvolvo a partir das necessidades do restaurante da minha família, para organizar registros de consumo e fechamentos por cliente.</p>
-        <h4>Escopo do projeto</h4>
-        <ul>
-          <li>Cadastro de clientes, funcionários, produtos e preços</li>
-          <li>Lançamentos individuais e coletivos de consumo</li>
-          <li>Consumos e assinaturas em tablet, com operação offline e sincronização</li>
-          <li>Histórico, observações e fechamentos diários e mensais por cliente</li>
-          <li>Geração de PDF mensal</li>
-        </ul>
-        <a class="btn btn-outline project-cta" href="https://wa.me/5564999883459?text=Quero%20conhecer%20a%20MesaFlow" target="_blank" rel="noopener noreferrer">Conversar sobre a MesaFlow</a>
-      </article>
-      <article class="card project-card" data-aos="fade-up" data-aos-delay="100">
-        <span class="project-status">Em desenvolvimento · Automação por voz</span>
-        <div class="card-icon" aria-hidden="true"><i class="bx bx-microphone"></i></div>
-        <h3>Sistema com integração com Alexa</h3>
-        <p class="project-lead">Menos digitação na rotina do negócio.</p>
-        <p>Projeto de integração entre Alexa e um sistema em Python para facilitar o registro de vendas e consumos por comandos de voz.</p>
-        <h4>Objetivos da integração</h4>
-        <ul>
-          <li>Registrar vendas por voz e associar lançamentos ao cliente</li>
-          <li>Organizar vendas à vista e valores a receber</li>
-          <li>Gerar informações para acompanhamento diário e mensal</li>
-          <li>Conectar comandos de voz à lógica do sistema</li>
-        </ul>
-        <p class="project-note">As funcionalidades descrevem o escopo de desenvolvimento. Demonstração e disponibilidade sob consulta.</p>
-        <a class="btn btn-outline project-cta" href="https://wa.me/5564999883459?text=Quero%20conversar%20sobre%20integra%C3%A7%C3%A3o%20com%20Alexa" target="_blank" rel="noopener noreferrer">Conversar sobre automação</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="contato">
-  <div class="container">
-    <div class="section-header" data-aos="zoom-in">
-      <h2 class="section-title">Vamos Conversar?</h2>
-      <p class="section-subtitle">Estou pronto para transformar sua ideia em realidade. Escolha o melhor canal abaixo.</p>
-
-      <div class="contact-links" style="justify-content: center; margin-top: 40px;">
-        <a href="https://wa.me/5564999883459" target="_blank" title="WhatsApp"><i class='bx bxl-whatsapp'></i></a>
-        <a href="https://instagram.com/joaootaviororiz" target="_blank" title="Instagram"><i class='bx bxl-instagram'></i></a>
-        <a href="https://linkedin.com/in/joaootaviororiz" target="_blank" title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
-        <a href="mailto:joao.otvo.rv@hotmail.com" title="Email"><i class='bx bx-envelope'></i></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="footer-content">
+  <header id="header">
+    <div class="container nav">
       <div class="logo">RorizTech<span>Solutions</span></div>
-      <p>© 2026 — Todos os direitos reservados.</p>
+
+      <nav class="menu" id="menu">
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#curriculo">Currículo</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-  </div>
-</footer>
+  </header>
 
-<a class="whatsapp-float" href="https://wa.me/5564999883459" target="_blank">
-  <i class='bx bxl-whatsapp'></i>
-</a>
+  <section class="hero container">
+    <div data-aos="fade-up" data-aos-duration="1000">
+      <h1>Soluções Inteligentes em <span>Tecnologia e Automação</span></h1>
+      <p>
+        Especialista em transformar processos através da análise de dados, automação com IA em Python e desenvolvimento
+        de sistemas sob medida.
+      </p>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="https://wa.me/5564999883459" target="_blank">
+          <i class='bx bxl-whatsapp' style="margin-right: 8px; font-size: 1.2rem;"></i> Falar no WhatsApp
+        </a>
+        <a class="btn btn-outline" href="#curriculo">
+          <i class='bx bx-file' style="margin-right: 8px; font-size: 1.2rem;"></i> Ver Currículo
+        </a>
+      </div>
+    </div>
+  </section>
 
-<!-- AOS Animation JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<!-- Swiper Slider JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <section id="servicos">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Nossas Especialidades</h2>
+        <p class="section-subtitle">Soluções completas para levar sua empresa ao próximo nível digital.</p>
+      </div>
 
-<script>
-  // Initialize AOS
-  if (window.AOS) AOS.init({
-    duration: 800,
-    once: true,
-    offset: 100,
-    easing: 'ease-out-cubic'
-  });
+      <!-- Swiper Slider -->
+      <div class="swiper mySwiper" data-aos="fade-up" data-aos-delay="200">
+        <div class="swiper-wrapper">
 
-  // Initialize Swiper
-  var swiper = window.Swiper ? new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-    },
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    loop: true,
-  }) : null;
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card-icon"><i class='bx bx-bar-chart-alt-2'></i></div>
+              <h3>Dados & Inteligência</h3>
+              <ul>
+                <li>Análise avançada de dados</li>
+                <li>Dashboards estratégicos</li>
+                <li>Modelagem preditiva</li>
+              </ul>
+            </div>
+          </div>
 
-  // Mobile menu toggle
-  const hamburger = document.getElementById('hamburger');
-  const menu = document.getElementById('menu');
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card-icon"><i class='bx bx-bot'></i></div>
+              <h3>Automação & IA</h3>
+              <ul>
+                <li>Agentes de IA em Python</li>
+                <li>Automação de fluxos</li>
+                <li>Integração de APIs</li>
+              </ul>
+            </div>
+          </div>
 
-  hamburger.addEventListener('click', () => {
-    menu.classList.toggle('active');
-    hamburger.setAttribute('aria-expanded', String(menu.classList.contains('active')));
-    hamburger.setAttribute('aria-label', menu.classList.contains('active') ? 'Fechar menu' : 'Abrir menu');
-    hamburger.querySelectorAll('span').forEach((span, index) => {
-      if (menu.classList.contains('active')) {
-        if (index === 0) span.style.transform = 'rotate(45deg) translate(8px, 8px)';
-        if (index === 1) span.style.opacity = '0';
-        if (index === 2) span.style.transform = 'rotate(-45deg) translate(7px, -7px)';
-      } else {
-        span.style.transform = 'none';
-        span.style.opacity = '1';
-      }
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card-icon"><i class='bx bx-code-alt'></i></div>
+              <h3>Desenvolvimento</h3>
+              <ul>
+                <li>Sistemas personalizados</li>
+                <li>Landing Pages de alta conversão</li>
+                <li>Aplicações escaláveis</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card-icon"><i class='bx bx-support'></i></div>
+              <h3>Suporte Técnico</h3>
+              <ul>
+                <li>Gestão de TI empresarial</li>
+                <li>Suporte remoto ágil</li>
+                <li>Segurança da informação</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card-icon"><i class='bx bx-palette'></i></div>
+              <h3>Design Digital</h3>
+              <ul>
+                <li>Identidade visual moderna</li>
+                <li>UX/UI Design</li>
+                <li>Social Media Design</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-info" data-aos="fade-right">
+          <h2 class="section-title" style="text-align: left;">Inovação Constante</h2>
+          <div class="about-text">
+            <p>Sou <strong>João Otávio Mota Roriz</strong>, engenheiro de software e especialista em tecnologia. Minha
+              trajetória é marcada pela dedicação em transformar dados em inteligência e processos manuais em automações
+              eficientes.</p>
+            <p style="margin-top: 20px;">Com sólida experiência em BI, suporte técnico e desenvolvimento, busco sempre o
+              próximo nível de excelência profissional, garantindo que cada solução entregue traga resultados prósperos
+              e reconhecimento para quem as utiliza.</p>
+          </div>
+        </div>
+        <div class="about-stats" data-aos="fade-left">
+          <div class="stat-item">
+            <span class="stat-number">9+</span>
+            <span class="stat-label">Anos de XP</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">Engenheiro</span>
+            <span class="stat-label">Software</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">Python/SQL</span>
+            <span class="stat-label">Especialista</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">BI/IA</span>
+            <span class="stat-label">Foco</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="curriculo">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Minha Trajetória</h2>
+        <p class="section-subtitle">Experiência profissional consolidada em análise de dados, suporte e automação.</p>
+      </div>
+
+      <div class="timeline" data-aos="fade-up">
+        <!-- Item 1: Mixbrasilis -->
+        <div class="timeline-item">
+          <span class="timeline-date">11/2025 — Presente</span>
+          <h3 class="timeline-title">Analista de Dados</h3>
+          <span class="timeline-company">Mixbrasilis (Prestação de Serviços)</span>
+          <p class="timeline-desc">
+            Desenvolvimento de KPIs estratégicos e dashboards no Google Looker Studio. Construção de pipelines de ETL em
+            Python e otimização de consultas SQL (Firebird) para suporte à tomada de decisão gerencial.
+          </p>
+        </div>
+
+        <!-- Item 2: Real Jurídica -->
+        <div class="timeline-item">
+          <span class="timeline-date">09/2015 — 07/2025</span>
+          <h3 class="timeline-title">Analista de Suporte / BI</h3>
+          <span class="timeline-company">Real Jurídica</span>
+          <p class="timeline-desc">
+            Gestão de infraestrutura de servidores, automação de processos internos com scripts Shell e Python,
+            manutenção de bancos de dados e criação de relatórios estratégicos para recuperação de crédito.
+          </p>
+        </div>
+
+        <!-- Item 3: Formação -->
+        <div class="timeline-item">
+          <span class="timeline-date">Concluído em 2020</span>
+          <h3 class="timeline-title">Engenharia de Software</h3>
+          <span class="timeline-company">UniRv - Universidade de Rio Verde</span>
+          <p class="timeline-desc">
+            Graduação completa, consolidando conhecimentos em arquitetura de sistemas, desenvolvimento e gestão de
+            projetos tecnológicos.
+          </p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 50px;" data-aos="zoom-in">
+        <a href="mailto:joao.otvo.rv@hotmail.com" class="btn btn-outline">
+          <i class='bx bx-envelope' style="margin-right: 8px;"></i> Solicitar Currículo Completo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="container">
+      <div class="section-header" data-aos="zoom-in">
+        <h2 class="section-title">Vamos Conversar?</h2>
+        <p class="section-subtitle">Estou pronto para transformar sua ideia em realidade. Escolha o melhor canal abaixo.
+        </p>
+
+        <div class="contact-links" style="justify-content: center; margin-top: 40px;">
+          <a href="https://wa.me/5564999883459" target="_blank" title="WhatsApp"><i class='bx bxl-whatsapp'></i></a>
+          <a href="https://instagram.com/joaootaviororiz" target="_blank" title="Instagram"><i
+              class='bx bxl-instagram'></i></a>
+          <a href="https://linkedin.com/in/joaootaviororiz" target="_blank" title="LinkedIn"><i
+              class='bx bxl-linkedin'></i></a>
+          <a href="mailto:joao.otvo.rv@hotmail.com" title="Email"><i class='bx bx-envelope'></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="logo">RorizTech<span>Solutions</span></div>
+        <p>© 2026 — Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5564999883459" target="_blank">
+    <i class='bx bxl-whatsapp'></i>
+  </a>
+
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Swiper Slider JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100,
+      easing: 'ease-out-cubic'
     });
-  });
 
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && menu.classList.contains('active')) {
-      hamburger.click();
-      hamburger.focus();
-    }
-  });
+    // Initialize Swiper
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      loop: true,
+    });
 
-  // Header scroll effect
-  window.addEventListener('scroll', () => {
-    const header = document.getElementById('header');
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
 
-  // Close menu on link click
-  document.querySelectorAll('.menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('active');
-      hamburger.setAttribute('aria-expanded', 'false');
-      hamburger.setAttribute('aria-label', 'Abrir menu');
-      document.querySelectorAll('.hamburger span').forEach(span => {
-        span.style.transform = 'none';
-        span.style.opacity = '1';
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      hamburger.querySelectorAll('span').forEach((span, index) => {
+        if (menu.classList.contains('active')) {
+          if (index === 0) span.style.transform = 'rotate(45deg) translate(8px, 8px)';
+          if (index === 1) span.style.opacity = '0';
+          if (index === 2) span.style.transform = 'rotate(-45deg) translate(7px, -7px)';
+        } else {
+          span.style.transform = 'none';
+          span.style.opacity = '1';
+        }
       });
     });
-  });
-</script>
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('.menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('active');
+        document.querySelectorAll('.hamburger span').forEach(span => {
+          span.style.transform = 'none';
+          span.style.opacity = '1';
+        });
+      });
+    });
+  </script>
 
 </body>
+
 </html>
