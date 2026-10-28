@@ -11,7 +11,7 @@
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  
+
   <!-- AOS Animation Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- Swiper Slider Library -->
@@ -39,7 +39,7 @@
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--bg);
-      background-image: 
+      background-image:
         radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.05) 0%, transparent 40%),
         radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.05) 0%, transparent 40%);
       color: var(--text);
@@ -541,11 +541,36 @@
       .menu a { margin: 0; font-size: 1.5rem; }
 
       .hero h1 { font-size: 3rem; }
-      
+
       .about-stats { gap: 12px; }
       .stat-item { padding: 16px 10px; }
-      
+
       .footer-content { flex-direction: column; text-align: center; }
+    }
+    section[id] { scroll-margin-top: 100px; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+    .project-card { gap: 16px; }
+    .project-card p { color: var(--muted); }
+    .project-card .card-icon, .project-card h3 { margin-bottom: 0; }
+    .project-card .project-lead { color: var(--text); font-size: 1.15rem; }
+    .project-card h4 { margin-top: 8px; }
+    .project-status { color: var(--primary); font-size: .8rem; }
+    .project-card ul li { align-items: baseline; }
+    .project-note { font-size: .85rem; }
+    .project-cta { margin-top: auto; }
+    .hamburger { background: transparent; border: 0; padding: 10px; position: relative; z-index: 2001; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--primary); outline-offset: 5px; }
+    @media (max-width: 992px) { .menu a { margin-left: 18px; } .logo { font-size: 1.2rem; } }
+    @media (max-width: 768px) {
+      .project-grid { grid-template-columns: minmax(0, 1fr); }
+      .menu a { margin: 0; font-size: 1.2rem; }
+      .menu { visibility: hidden; }
+      .menu.active { visibility: visible; overflow-y: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+      [data-aos] { opacity: 1 !important; transform: none !important; }
     }
   </style>
 </head>
@@ -558,15 +583,16 @@
     <nav class="menu" id="menu">
       <a href="#servicos">Serviços</a>
       <a href="#sobre">Sobre</a>
-      <a href="#curriculo">Currículo</a>
+      <a href="#curriculo">Trajetória</a>
+      <a href="#projetos">Projetos</a>
       <a href="#contato">Contato</a>
     </nav>
 
-    <div class="hamburger" id="hamburger">
+    <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
   </div>
 </header>
 
@@ -574,7 +600,7 @@
   <div data-aos="fade-up" data-aos-duration="1000">
     <h1>Soluções Inteligentes em <span>Tecnologia e Automação</span></h1>
     <p>
-      Especialista em transformar processos através da análise de dados, automação com IA em Python e desenvolvimento de sistemas sob medida.
+      Sou João Otávio Mota Roriz, analista de dados na Softplan e desenvolvedor de projetos próprios. Transformo necessidades do dia a dia em análises, automações em Python e sistemas sob medida.
     </p>
     <div class="hero-btns">
       <a class="btn btn-primary" href="https://wa.me/5564999883459" target="_blank">
@@ -597,7 +623,7 @@
     <!-- Swiper Slider -->
     <div class="swiper mySwiper" data-aos="fade-up" data-aos-delay="200">
       <div class="swiper-wrapper">
-        
+
         <div class="swiper-slide">
           <div class="card">
             <div class="card-icon"><i class='bx bx-bar-chart-alt-2'></i></div>
@@ -670,8 +696,8 @@
       <div class="about-info" data-aos="fade-right">
         <h2 class="section-title" style="text-align: left;">Inovação Constante</h2>
         <div class="about-text">
-          <p>Sou <strong>João Otávio Mota Roriz</strong>, engenheiro de software e especialista em tecnologia. Minha trajetória é marcada pela dedicação em transformar dados em inteligência e processos manuais em automações eficientes.</p>
-          <p style="margin-top: 20px;">Com sólida experiência em BI, suporte técnico e desenvolvimento, busco sempre o próximo nível de excelência profissional, garantindo que cada solução entregue traga resultados prósperos e reconhecimento para quem as utiliza.</p>
+          <p>Sou <strong>João Otávio Mota Roriz</strong>, engenheiro de software e especialista em tecnologia. Desde maio de 2026, atuo como Analista de Dados I na Softplan, no contexto do produto 1Doc. Minha trajetória conecta suporte técnico, dados e desenvolvimento de sistemas.</p>
+          <p style="margin-top: 20px;">Com sólida experiência em BI, suporte técnico e desenvolvimento, busco sempre o próximo nível de excelência profissional, desenvolvendo projetos próprios como a MesaFlow e um sistema com integração com Alexa.</p>
         </div>
       </div>
       <div class="about-stats" data-aos="fade-left">
@@ -704,13 +730,19 @@
     </div>
 
     <div class="timeline" data-aos="fade-up">
-      <!-- Item 1: Mixbrasilis -->
       <div class="timeline-item">
-        <span class="timeline-date">11/2025 — Presente</span>
+        <span class="timeline-date">05/2026 — Presente</span>
+        <h3 class="timeline-title">Analista de Dados I</h3>
+        <span class="timeline-company">Softplan · 1Doc</span>
+        <p class="timeline-desc">Atuação em análise de dados no contexto do produto 1Doc, integrando a equipe da Softplan desde 18 de maio de 2026. Uma etapa da minha trajetória dedicada ao trabalho com dados e à evolução profissional em tecnologia.</p>
+      </div>
+      <!-- Experiência em dados -->
+      <div class="timeline-item">
+        <span class="timeline-date">Experiência em análise de dados</span>
         <h3 class="timeline-title">Analista de Dados</h3>
         <span class="timeline-company">Mixbrasilis (Prestação de Serviços)</span>
         <p class="timeline-desc">
-          Desenvolvimento de KPIs estratégicos e dashboards no Google Looker Studio. Construção de pipelines de ETL em Python e otimização de consultas SQL (Firebird) para suporte à tomada de decisão gerencial.
+          Desenvolvimento de KPIs estratégicos e dashboards no Google Looker Studio. Construção de pipelines de ETL em Python e consultas SQL (Firebird) para suporte à tomada de decisão gerencial. Análises operacionais e comerciais, relatórios financeiros e suporte a marketplaces.
         </p>
       </div>
 
@@ -743,12 +775,55 @@
   </div>
 </section>
 
+<section id="projetos" aria-labelledby="projetos-title">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title" id="projetos-title">Projetos próprios</h2>
+      <p class="section-subtitle">Desenvolvimento aplicado a problemas reais de pequenos negócios, restaurantes e suas rotinas.</p>
+    </div>
+    <div class="project-grid">
+      <article class="card project-card" data-aos="fade-up">
+        <span class="project-status">Em desenvolvimento · Sistema para restaurantes</span>
+        <div class="card-icon" aria-hidden="true"><i class="bx bx-restaurant"></i></div>
+        <h3>MesaFlow</h3>
+        <p class="project-lead">Da refeição ao financeiro.</p>
+        <p>Sistema que desenvolvo a partir das necessidades do restaurante da minha família, para organizar registros de consumo e fechamentos por cliente.</p>
+        <h4>Escopo do projeto</h4>
+        <ul>
+          <li>Cadastro de clientes, funcionários, produtos e preços</li>
+          <li>Lançamentos individuais e coletivos de consumo</li>
+          <li>Consumos e assinaturas em tablet, com operação offline e sincronização</li>
+          <li>Histórico, observações e fechamentos diários e mensais por cliente</li>
+          <li>Geração de PDF mensal</li>
+        </ul>
+        <a class="btn btn-outline project-cta" href="https://wa.me/5564999883459?text=Quero%20conhecer%20a%20MesaFlow" target="_blank" rel="noopener noreferrer">Conversar sobre a MesaFlow</a>
+      </article>
+      <article class="card project-card" data-aos="fade-up" data-aos-delay="100">
+        <span class="project-status">Em desenvolvimento · Automação por voz</span>
+        <div class="card-icon" aria-hidden="true"><i class="bx bx-microphone"></i></div>
+        <h3>Sistema com integração com Alexa</h3>
+        <p class="project-lead">Menos digitação na rotina do negócio.</p>
+        <p>Projeto de integração entre Alexa e um sistema em Python para facilitar o registro de vendas e consumos por comandos de voz.</p>
+        <h4>Objetivos da integração</h4>
+        <ul>
+          <li>Registrar vendas por voz e associar lançamentos ao cliente</li>
+          <li>Organizar vendas à vista e valores a receber</li>
+          <li>Gerar informações para acompanhamento diário e mensal</li>
+          <li>Conectar comandos de voz à lógica do sistema</li>
+        </ul>
+        <p class="project-note">As funcionalidades descrevem o escopo de desenvolvimento. Demonstração e disponibilidade sob consulta.</p>
+        <a class="btn btn-outline project-cta" href="https://wa.me/5564999883459?text=Quero%20conversar%20sobre%20integra%C3%A7%C3%A3o%20com%20Alexa" target="_blank" rel="noopener noreferrer">Conversar sobre automação</a>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section id="contato">
   <div class="container">
     <div class="section-header" data-aos="zoom-in">
       <h2 class="section-title">Vamos Conversar?</h2>
       <p class="section-subtitle">Estou pronto para transformar sua ideia em realidade. Escolha o melhor canal abaixo.</p>
-      
+
       <div class="contact-links" style="justify-content: center; margin-top: 40px;">
         <a href="https://wa.me/5564999883459" target="_blank" title="WhatsApp"><i class='bx bxl-whatsapp'></i></a>
         <a href="https://instagram.com/joaootaviororiz" target="_blank" title="Instagram"><i class='bx bxl-instagram'></i></a>
@@ -779,7 +854,7 @@
 
 <script>
   // Initialize AOS
-  AOS.init({
+  if (window.AOS) AOS.init({
     duration: 800,
     once: true,
     offset: 100,
@@ -787,7 +862,7 @@
   });
 
   // Initialize Swiper
-  var swiper = new Swiper(".mySwiper", {
+  var swiper = window.Swiper ? new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 30,
     pagination: {
@@ -807,7 +882,7 @@
       disableOnInteraction: false,
     },
     loop: true,
-  });
+  }) : null;
 
   // Mobile menu toggle
   const hamburger = document.getElementById('hamburger');
@@ -815,6 +890,8 @@
 
   hamburger.addEventListener('click', () => {
     menu.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', String(menu.classList.contains('active')));
+    hamburger.setAttribute('aria-label', menu.classList.contains('active') ? 'Fechar menu' : 'Abrir menu');
     hamburger.querySelectorAll('span').forEach((span, index) => {
       if (menu.classList.contains('active')) {
         if (index === 0) span.style.transform = 'rotate(45deg) translate(8px, 8px)';
@@ -825,6 +902,13 @@
         span.style.opacity = '1';
       }
     });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu.classList.contains('active')) {
+      hamburger.click();
+      hamburger.focus();
+    }
   });
 
   // Header scroll effect
@@ -841,6 +925,8 @@
   document.querySelectorAll('.menu a').forEach(link => {
     link.addEventListener('click', () => {
       menu.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.setAttribute('aria-label', 'Abrir menu');
       document.querySelectorAll('.hamburger span').forEach(span => {
         span.style.transform = 'none';
         span.style.opacity = '1';
